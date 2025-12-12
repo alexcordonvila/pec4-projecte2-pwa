@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-movies-list',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './movies-list.html',
   styleUrl: './movies-list.scss',
 })
