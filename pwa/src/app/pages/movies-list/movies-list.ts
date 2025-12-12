@@ -15,13 +15,14 @@ export class MoviesList implements OnInit {
   constructor(private moviesService: Movies) {}
 
   ngOnInit(): void {
-    this.moviesService
-      .getPopularMovies()
-      .subscribe((res : any) => this.movies.set(res.results.slice(0,20)));
     // this.moviesService
-    // .getPopularMovies()
-    // .subscribe((res: any) => {
-    //   this.movies.set(res.results.slice(0, 20));
-    // });
+    //   .getPopularMovies()
+    //   .subscribe((res : any) => this.movies.set(res));
+    this.moviesService
+    .getPopularMovies()
+    .subscribe((res: any) => {
+      this.movies.set(res);
+      console.log(res);
+    });
   }
 }
