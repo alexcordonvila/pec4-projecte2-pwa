@@ -2,11 +2,32 @@
 <div class="container">
     <h1>Movies</h1>
     <ul class=" list-grup">
+          @for (m of movies(); track m.id) {
+
         <a [routerLink]="['/movies', 'XXXX']"
         class="list-group-item list-group-item-action animate__bounce animate__fadeIn "
         >
 
-        TEST
+        
+      <h3>{{ m.title }}</h3>
+      <p>Puntuación: ⭐ {{ m.vote_average }}</p>
         </a>
+    }
     </ul>
 </div>
+
+
+
+<!-- <div class="movies-grid">
+  @for (m of movies(); track m.id) {
+    <div class="movie-card">
+      <img 
+        [src]="'https://image.tmdb.org/t/p/w500' + m.poster_path"
+        alt="{{ m.title }}"
+      >
+
+      <h3>{{ m.title }}</h3>
+      <p>Puntuación: ⭐ {{ m.vote_average }}</p>
+    </div>
+  }
+</div> -->
