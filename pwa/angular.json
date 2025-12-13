@@ -32,7 +32,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/app/assets/css/animate.css"
+              "src/assets/css/animate.css"
             ]
           },
           "configurations": {
