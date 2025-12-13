@@ -1,0 +1,18 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.app-title-display {
+  font-size: 1.15em; 
+  font-weight: 500; 
+  letter-spacing: 0.5px; 
+  display: flex;
+  cursor: default; 
+}
+.mat-toolbar {
+  background-color: rgb(221, 221, 221);
+  position: fixed; 
+  top: 0;          
+  left: 0;        
+  right: 0;        
+  z-index: 999;    
+}

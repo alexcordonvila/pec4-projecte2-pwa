@@ -1,17 +1,35 @@
 <div class="container">
-    <h1>Movies</h1>
-    <ul class=" list-grup">
-          @for (m of movies(); track m.id) {
+  <h1>Movies</h1>
 
-        <a [routerLink]="['/movies', m.id]"
-        class="list-group-item list-group-item-action animate__bounce animate__fadeIn "
-        >
-      <h3>{{ m.title }}</h3>
-      <p>Puntuación: ⭐ {{ m.vote_average }}</p>
-        </a>
+  <mat-button-toggle-group [value]="viewMode" (change)="viewMode = $event.value" aria-label="Modo de vista">
+    <mat-button-toggle value="grid">
+      <mat-icon>grid_view</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="list">
+      <mat-icon>list_view</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <!-- LIST -->
+  @if (viewMode=='list') {
+  @if (movies().length > 0) {
+  <mat-nav-list>
+    @for (m of movies(); track m.id) {
+    <!-- TODO: CREATE COMPONENT -->
+    <a mat-list-item [routerLink]="['/movies', m.id]" routerLinkActive="active" class="animate__bounce animate__fadeIn">
+       <div class="movie-item-row">
+          <h3 class="movie-title">{{ m.title }}</h3>
+          <p class="movie-rating">⭐ {{ m.vote_average }}</p>
+        </div>
+    </a>
+    <!----------------------------------->
     }
-    </ul>
+  </mat-nav-list>
+  }
+  }
+  <!-- GRID -->
+  @else if (viewMode=='grid') {
+  }
+
+
+
 </div>
-
-
-

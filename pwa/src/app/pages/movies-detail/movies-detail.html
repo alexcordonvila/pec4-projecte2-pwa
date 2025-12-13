@@ -1,38 +1,50 @@
-<div class="movie-detail">
-    <div class="movie-header">
-        <img class="poster" [src]="'https://image.tmdb.org/t/p/w500' + movieDetail().poster_path"
-            alt="{{ movieDetail().title }}" />
+<button
+  mat-icon-button
+  color="primary"
+  aria-label="Volver"
+  routerLink="/"
+>
+  <mat-icon>arrow_back</mat-icon>
+</button>
 
-        <div class="movie-info">
-            <h2>
-                {{ movieDetail().title }}
-                <span class="year">
-                    ({{ movieDetail().release_date }})
-                </span>
-            </h2>
+<mat-card class="movie-card">
+  <mat-card-header>
+    <mat-card-title>
+      {{ movieDetail().title }}
+      <span class="year">
+        ({{ movieDetail().release_date }})
+      </span>
+    </mat-card-title>
 
-            <p class="rating">
-                ⭐ {{ movieDetail().vote_average }}
-                <span class="votes">
-                    ({{ movieDetail().vote_count }} votos)
-                </span>
-            </p>
+    <mat-card-subtitle>
+      ⭐ {{ movieDetail().vote_average }}
+      <span class="votes">
+        ({{ movieDetail().vote_count }} votos)
+      </span>
+    </mat-card-subtitle>
+  </mat-card-header>
 
-            @if (movieDetail().runtime) {
-            <p class="runtime">
-                ⏱ {{ movieDetail().runtime }} min
-            </p>
-            }
-        </div>
-    </div>
+  <img
+    mat-card-image
+    class="poster"
+    [src]="'https://image.tmdb.org/t/p/w500' + movieDetail().poster_path"
+    [alt]="movieDetail().title"
+  />
 
-    <div class="movie-overview">
-        <h3>Sinopsis</h3>
-        <p>{{ movieDetail().overview }}</p>
-    </div>
+  <mat-card-content>
+    @if (movieDetail().runtime) {
+      <p class="runtime">
+        ⏱ {{ movieDetail().runtime }} min
+      </p>
+    }
+
+    <h3>Sinopsis</h3>
+    <p>{{ movieDetail().overview }}</p>
 
     <div class="movie-extra">
-        <p><strong>Idioma original:</strong> {{ movieDetail().original_language }}</p>
-        <p><strong>Popularidad:</strong> {{ movieDetail().popularity }}</p>
+      <p><strong>Idioma original:</strong> {{ movieDetail().original_language }}</p>
+      <p><strong>Popularidad:</strong> {{ movieDetail().popularity }}</p>
     </div>
-</div>
+  </mat-card-content>
+
+</mat-card>
