@@ -6,10 +6,12 @@ import { MatButtonToggleGroup, MatButtonToggle } from '@angular/material/button-
 import { MatIcon } from '@angular/material/icon';
 import { MatDivider, MatList } from '@angular/material/list';
 import {MatListModule} from '@angular/material/list';
+import { MovieListRow } from '../../shared/components/movie-list-row/movie-list-row';
+import { MovieCard } from "../../shared/components/movie-card/movie-card";
 
 @Component({
   selector: 'app-movies-list',
-  imports: [RouterLink, MatButtonToggleGroup, MatButtonToggle, MatIcon, MatListModule, MatDivider ],
+  imports: [MovieListRow, RouterLink, MatButtonToggleGroup, MatButtonToggle, MatIcon, MatListModule, MatDivider, MovieCard],
   templateUrl: './movies-list.html',
   styleUrl: './movies-list.scss',
 })

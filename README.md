@@ -46,3 +46,11 @@ Si no tenim internet hauriem de carregar una vista informant que no s'ha pogut c
 Problema: MatIcon no carrega la icona sense conexió -> solució1: npm install material-icons e importar-ho en angular.json per servir icones des de l'app. 
 
 solució 2: usar CDN pero el service worker fa el caching per a que el navegador la serveixi des de caché (Angular-way)
+
+
+
+
+
+#Hem creat components compartits per tenir el codi més net
+ng generate component shared/components/movie-card --standalone
+ng generate component shared/components/movie-list-row --standalone

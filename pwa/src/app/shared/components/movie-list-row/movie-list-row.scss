@@ -1,0 +1,19 @@
+
+.movie-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.movie-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.movie-rating {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}

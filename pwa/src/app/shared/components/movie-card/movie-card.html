@@ -1,0 +1,22 @@
+<mat-card class="movie-card" [routerLink]="['/movies', movie.id]" routerLinkActive="active">
+  <mat-card-header>
+    <mat-card-title>
+      {{ movie.title }}
+      <!-- <span class="year">({{ movie.release_date}})</span> -->
+    </mat-card-title>
+    <mat-card-subtitle>
+      ⭐ {{ movie.vote_average }}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <img
+    mat-card-image
+    class="poster"
+    [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+    [alt]="movie.title"
+  />
+
+  <mat-card-content>
+    <p class="overview">{{ movie.overview }}</p>
+  </mat-card-content>
+</mat-card>

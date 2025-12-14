@@ -1,0 +1,6 @@
+ <a [routerLink]="['/movies', movie.id]" routerLinkActive="active" class="animate__bounce animate__fadeIn">
+       <div class="movie-item-row">
+          <h3 class="movie-title">{{ movie.title }}</h3>
+          <p class="movie-rating">⭐ {{ movie.vote_average }}</p>
+        </div>
+    </a>

@@ -14,22 +14,19 @@
   @if (movies().length > 0) {
   <mat-nav-list>
     @for (m of movies(); track m.id) {
-    <!-- TODO: CREATE COMPONENT -->
-    <a mat-list-item [routerLink]="['/movies', m.id]" routerLinkActive="active" class="animate__bounce animate__fadeIn">
-       <div class="movie-item-row">
-          <h3 class="movie-title">{{ m.title }}</h3>
-          <p class="movie-rating">⭐ {{ m.vote_average }}</p>
-        </div>
-    </a>
-    <!----------------------------------->
+    <mat-list-item>
+      <app-movie-list-row [movie]="m" />
+    </mat-list-item>
     }
   </mat-nav-list>
   }
   }
   <!-- GRID -->
   @else if (viewMode=='grid') {
+  <div class="movie-grid-container">
+    @for (m of movies(); track m.id) {
+    <app-movie-card [movie]="m" />
+    }
+  </div>
   }
-
-
-
 </div>
