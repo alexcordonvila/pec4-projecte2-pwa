@@ -1,13 +1,8 @@
 <div class="container">
-  <h1>Movies</h1>
-
-
-
-
   <mat-card class="movies-container">
     <mat-card-header class="movies-header">
 
-      <mat-card-title>Películas</mat-card-title>
+      <mat-card-title>Top Películas Actuales</mat-card-title>
       <span class="spacer"></span>
 
 
@@ -19,37 +14,12 @@
           <mat-icon>list_view</mat-icon>
         </mat-button-toggle>
       </mat-button-toggle-group>
-
     </mat-card-header>
-
-
-
-
-
-
-
-
-
-    <!-- LIST -->
     @if (viewMode=='list') {
-    @if (movies().length > 0) {
-    <mat-nav-list>
-      @for (m of movies(); track m.id) {
-      <mat-list-item>
-        <app-movie-list-row [movie]="m" />
-      </mat-list-item>
-      }
-    </mat-nav-list>
+      <app-movie-list-row [movies]="movies()" />
     }
-    }
-    <!-- GRID -->
     @else if (viewMode=='grid') {
-    <div class="movie-grid-container">
-      @for (m of movies(); track m.id) {
-      <app-movie-card [movie]="m" />
-      }
-    </div>
+      <app-grid [movies]="movies()" />
     }
-
   </mat-card>
 </div>

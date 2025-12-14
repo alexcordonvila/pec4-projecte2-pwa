@@ -9,16 +9,17 @@ import {MatListModule} from '@angular/material/list';
 import { MovieListRow } from '../../shared/components/movie-list-row/movie-list-row';
 import { MovieCard } from "../../shared/components/movie-card/movie-card";
 import { MatCard, MatCardTitle, MatCardHeader } from "@angular/material/card";
+import { Grid } from "../../shared/components/grid/grid";
 
 @Component({
   selector: 'app-movies-list',
-  imports: [MovieListRow, RouterLink, MatButtonToggleGroup, MatButtonToggle, MatIcon, MatListModule, MatDivider, MovieCard, MatCard, MatCardTitle, MatCardHeader],
+  imports: [MovieListRow, RouterLink, MatButtonToggleGroup, MatButtonToggle, MatIcon, MatListModule, MatDivider, MovieCard, MatCard, MatCardTitle, MatCardHeader, Grid],
   templateUrl: './movies-list.html',
   styleUrl: './movies-list.scss',
 })
 export class MoviesList implements OnInit {
   movies = signal<Movie[]>([]);
-  viewMode: 'grid' | 'list' = 'list';
+  viewMode: 'grid' | 'list' = 'grid';
   constructor(private moviesService: Movies) {}
 
   ngOnInit(): void {

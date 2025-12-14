@@ -1,0 +1,22 @@
+$padding-small: 10px;
+$padding-medium: 16px;
+
+.movie-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: $padding-medium;
+  padding: $padding-medium * 2;
+  background-color: #fdfdfd;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}

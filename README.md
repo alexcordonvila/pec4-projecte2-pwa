@@ -54,3 +54,4 @@ solució 2: usar CDN pero el service worker fa el caching per a que el navegador
 #Hem creat components compartits per tenir el codi més net
 ng generate component shared/components/movie-card --standalone
 ng generate component shared/components/movie-list-row --standalone
+ng generate component shared/components/grid --standalone
