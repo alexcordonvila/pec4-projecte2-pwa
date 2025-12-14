@@ -5,11 +5,15 @@
   align-items: center;
   width: 100%;
 }
-
+.movie-row {
+text-decoration: none;
+  color: inherit; 
+}
 .movie-title {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
+ 
 }
 
 .movie-rating {

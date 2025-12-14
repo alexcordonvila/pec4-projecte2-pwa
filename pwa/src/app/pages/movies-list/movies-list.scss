@@ -1,6 +1,11 @@
 $padding-small: 10px;
 $padding-medium: 16px;
-
+.movies-header{
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 .movie-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); // 3 columnas fijas

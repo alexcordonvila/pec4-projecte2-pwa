@@ -8,10 +8,11 @@ import { MatDivider, MatList } from '@angular/material/list';
 import {MatListModule} from '@angular/material/list';
 import { MovieListRow } from '../../shared/components/movie-list-row/movie-list-row';
 import { MovieCard } from "../../shared/components/movie-card/movie-card";
+import { MatCard, MatCardTitle, MatCardHeader } from "@angular/material/card";
 
 @Component({
   selector: 'app-movies-list',
-  imports: [MovieListRow, RouterLink, MatButtonToggleGroup, MatButtonToggle, MatIcon, MatListModule, MatDivider, MovieCard],
+  imports: [MovieListRow, RouterLink, MatButtonToggleGroup, MatButtonToggle, MatIcon, MatListModule, MatDivider, MovieCard, MatCard, MatCardTitle, MatCardHeader],
   templateUrl: './movies-list.html',
   styleUrl: './movies-list.scss',
 })

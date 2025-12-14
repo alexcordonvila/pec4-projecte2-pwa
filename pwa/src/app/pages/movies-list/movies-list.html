@@ -1,32 +1,55 @@
 <div class="container">
   <h1>Movies</h1>
 
-  <mat-button-toggle-group [value]="viewMode" (change)="viewMode = $event.value" aria-label="Modo de vista">
-    <mat-button-toggle value="grid">
-      <mat-icon>grid_view</mat-icon>
-    </mat-button-toggle>
-    <mat-button-toggle value="list">
-      <mat-icon>list_view</mat-icon>
-    </mat-button-toggle>
-  </mat-button-toggle-group>
-  <!-- LIST -->
-  @if (viewMode=='list') {
-  @if (movies().length > 0) {
-  <mat-nav-list>
-    @for (m of movies(); track m.id) {
-    <mat-list-item>
-      <app-movie-list-row [movie]="m" />
-    </mat-list-item>
+
+
+
+  <mat-card class="movies-container">
+    <mat-card-header class="movies-header">
+
+      <mat-card-title>Películas</mat-card-title>
+      <span class="spacer"></span>
+
+
+      <mat-button-toggle-group [value]="viewMode" (change)="viewMode = $event.value" aria-label="Modo de vista">
+        <mat-button-toggle value="grid">
+          <mat-icon>grid_view</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="list">
+          <mat-icon>list_view</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+
+    </mat-card-header>
+
+
+
+
+
+
+
+
+
+    <!-- LIST -->
+    @if (viewMode=='list') {
+    @if (movies().length > 0) {
+    <mat-nav-list>
+      @for (m of movies(); track m.id) {
+      <mat-list-item>
+        <app-movie-list-row [movie]="m" />
+      </mat-list-item>
+      }
+    </mat-nav-list>
     }
-  </mat-nav-list>
-  }
-  }
-  <!-- GRID -->
-  @else if (viewMode=='grid') {
-  <div class="movie-grid-container">
-    @for (m of movies(); track m.id) {
-    <app-movie-card [movie]="m" />
     }
-  </div>
-  }
+    <!-- GRID -->
+    @else if (viewMode=='grid') {
+    <div class="movie-grid-container">
+      @for (m of movies(); track m.id) {
+      <app-movie-card [movie]="m" />
+      }
+    </div>
+    }
+
+  </mat-card>
 </div>
