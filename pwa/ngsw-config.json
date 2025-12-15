@@ -5,6 +5,7 @@
     {
       "name": "app",
       "installMode": "prefetch",
+       "updateMode": "prefetch",
       "resources": {
         "files": [
           "/favicon.ico",
@@ -12,9 +13,14 @@
           "/index.html",
           "/manifest.webmanifest",
           "/*.css",
-          "/*.js"
+          "/*.js",
+           "assets/css/animate.css"
         ],
-        "urls": ["https://cdn.jsdelvir.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"]
+        "urls": [
+          "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
+           "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap",
+          "https://fonts.googleapis.com/icon?family=Material+Icons"
+        ]
       }
     },
     {
@@ -23,23 +29,34 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+           "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
       }
     }
   ],
   "dataGroups": [
-  {
-    "name": "movies-api",
-    "urls": [
-      "https://api.themoviedb.org/3/**"
-    ],
-    "cacheConfig": {
-      "maxSize": 500,
-      "maxAge": "1h",
-      "timeout": "2s",
-      "strategy": "freshness"
+    {
+      "name": "movies-api",
+      "urls": [
+        "https://api.themoviedb.org/3/**"
+      ],
+      "cacheConfig": {
+        "maxSize": 500,
+        "maxAge": "1h",
+        "timeout": "2s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "movies-images",
+      "urls": [
+        "https://image.tmdb.org/t/p/**"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxAge": "7d",
+        "maxSize": 300
+      }
     }
-  }
-]
+  ]
 }

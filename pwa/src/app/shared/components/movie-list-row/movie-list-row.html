@@ -1,7 +1,7 @@
 <mat-nav-list>
   @for (mov of movies; track mov.id) {
   <a mat-list-item [routerLink]="['/movies', mov.id]" routerLinkActive="active"
-    class="movie-row animate__bounce animate__fadeIn">
+    class="movie-row">
 
     <img matListItemAvatar [src]="'https://image.tmdb.org/t/p/w185' + mov.poster_path" [alt]="mov.title" />
 

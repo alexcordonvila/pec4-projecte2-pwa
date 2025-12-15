@@ -16,10 +16,10 @@
       </mat-button-toggle-group>
     </mat-card-header>
     @if (viewMode=='list') {
-      <app-movie-list-row [movies]="movies()" />
+      <app-movie-list-row [movies]="movies()" class="animate__animated animate__fadeIn" />
     }
     @else if (viewMode=='grid') {
-      <app-grid [movies]="movies()" />
+      <app-grid [movies]="movies()" class="animate__animated animate__fadeIn"/>
     }
   </mat-card>
 </div>

@@ -1,13 +1,13 @@
 <button mat-icon-button color="primary" aria-label="Volver" routerLink="/">
   <mat-icon>arrow_back</mat-icon>
 </button>
-<div class="movie-backdrop"
+<div class="movie-backdrop animate__animated animate__fadeIn"
   [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w1280' + movieDetail().backdrop_path + ')'"></div>
-<div class="movie-detail-wrapper">
-  <img class="movie-poster" [src]="'https://image.tmdb.org/t/p/w500' + movieDetail().poster_path"
+<div class="movie-detail-wrapper ">
+  <img class="movie-poster animate__animated animate__slideInUp " [src]="'https://image.tmdb.org/t/p/w500' + movieDetail().poster_path"
     [alt]="movieDetail().title" />
 
-  <mat-card class="movie-card">
+  <mat-card class="movie-card animate__animated animate__fadeIn">
 
     <h1 class="title">
       {{ movieDetail().title }}

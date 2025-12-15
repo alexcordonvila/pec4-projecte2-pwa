@@ -2,7 +2,6 @@ import { Component, signal } from '@angular/core';
 import { Movies } from '../../services/movies';
 import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Movie } from '../../models/movie.interface';
-import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 
