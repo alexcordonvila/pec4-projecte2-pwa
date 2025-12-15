@@ -4,28 +4,19 @@ import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/r
 import { Movie } from '../../models/movie.interface';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 import {
   MatCard,
-  MatCardActions,
-  MatCardContent,
-  MatCardHeader,
-  MatCardSubtitle,
-  MatCardTitle,
 } from '@angular/material/card';
 import { MatNavList } from '@angular/material/list';
 @Component({
   selector: 'app-movies-detail',
   imports: [
     RouterLink,
-    MatButton,
     MatIcon,
     MatCard,
-    MatCardHeader,
-    MatCardTitle,
-    MatCardSubtitle,
-    MatCardContent,
-    MatCardActions,
-    MatNavList
+    MatExpansionModule,
   ],
   templateUrl: './movies-detail.html',
   styleUrl: './movies-detail.scss',

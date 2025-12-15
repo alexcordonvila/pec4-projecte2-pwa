@@ -6,7 +6,7 @@ $padding-medium: 16px;
   grid-template-columns: repeat(4, 1fr); 
   gap: $padding-medium;
   padding: $padding-medium * 2;
-  background-color: #fdfdfd;
+  background-color: #fdfdfd00;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);

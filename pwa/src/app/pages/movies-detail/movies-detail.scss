@@ -1,88 +1,143 @@
-.movie-card {
-  max-width: 900px;
-  margin: 16px auto;
-  border-radius: 16px;
+:host {
+  display: block;
+  background: #fcfcfc00;
+  color: #fff;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-/* Imagen */
-.poster {
-  max-height: 500px;
+.movie-backdrop {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 800px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(10px);
+  transform: scale(1.15);
+
+  opacity: 0.65;
+  z-index: -1;
+}
+
+.movie-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 15px;
+  padding-bottom: 32px;
+}
+
+.movie-poster {
+  width: 180px;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+  margin-bottom: -90px;
+  z-index: 999;
+  background-color: #1a1a1a;
 }
 
-/* Header */
-mat-card-title {
-  font-size: 1.6rem;
+.movie-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 110px 24px 24px;
+  border-radius: 24px;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+
+  font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.2;
 }
 
 .year {
   font-weight: 400;
-  opacity: 0.7;
+  opacity: 0.6;
   margin-left: 6px;
 }
 
-/* Rating */
-mat-card-subtitle {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.rating {
+  margin: 8px 0 16px;
+  text-align: center;
+
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f5c518;
+}
+
+.overview {
   font-size: 0.95rem;
-}
-
-.votes {
-  opacity: 0.7;
-}
-
-/* Contenido */
-mat-card-content {
-  padding-top: 8px;
+  line-height: 1.55;
+  color: #444;
+  margin-bottom: 16px;
 }
 
 .runtime {
-  margin: 8px 0;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+mat-expansion-panel {
+  margin-top: 16px;
+
+  border-radius: 16px;
+  background: #f7f7f7;
+  color: #222;
+
+  box-shadow: none;
+}
+
+mat-expansion-panel-header {
   font-weight: 500;
 }
 
-h3 {
-  margin-top: 16px;
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-}
-
-/* Extra info */
-.movie-extra {
-  margin-top: 16px;
+.details {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px 16px;
+  gap: 12px 16px;
+  font-size: 0.9rem;
 }
 
-.movie-extra p {
+.details p {
   margin: 0;
 }
 
-/* Botón volver */
 button[mat-icon-button] {
-  margin: 8px 8px 0;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.119);
+  color: #fff;
+  border-radius: 10px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .movie-poster {
+    width: 200px;
+  }
+
   .movie-card {
-    margin: 8px;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 360px) {
+  .movie-poster {
+    width: 160px;
   }
 
-  mat-card-title {
-    font-size: 1.3rem;
-  }
-
-  .poster {
-    max-height: 380px;
-  }
-
-  .movie-extra {
-    grid-template-columns: 1fr;
+  .movie-card {
+    padding: 100px 20px 20px;
   }
 }

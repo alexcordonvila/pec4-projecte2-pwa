@@ -1,50 +1,37 @@
-<button
-  mat-icon-button
-  color="primary"
-  aria-label="Volver"
-  routerLink="/"
->
+<button mat-icon-button color="primary" aria-label="Volver" routerLink="/">
   <mat-icon>arrow_back</mat-icon>
 </button>
+<div class="movie-backdrop"
+  [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w1280' + movieDetail().backdrop_path + ')'"></div>
+<div class="movie-detail-wrapper">
+  <img class="movie-poster" [src]="'https://image.tmdb.org/t/p/w500' + movieDetail().poster_path"
+    [alt]="movieDetail().title" />
 
-<mat-card class="movie-card">
-  <mat-card-header>
-    <mat-card-title>
+  <mat-card class="movie-card">
+
+    <h1 class="title">
       {{ movieDetail().title }}
-      <span class="year">
-        ({{ movieDetail().release_date }})
-      </span>
-    </mat-card-title>
+    </h1>
 
-    <mat-card-subtitle>
-      ⭐ {{ movieDetail().vote_average }}
-      <span class="votes">
-        ({{ movieDetail().vote_count }} votos)
-      </span>
-    </mat-card-subtitle>
-  </mat-card-header>
+    <p class="rating">
+      ⭐ {{ movieDetail().vote_average }} · {{ movieDetail().vote_count }} votos
+    </p>
 
-  <img
-    mat-card-image
-    class="poster"
-    [src]="'https://image.tmdb.org/t/p/w500' + movieDetail().poster_path"
-    [alt]="movieDetail().title"
-  />
+    <p class="overview">
+      {{ movieDetail().overview }}
+    </p>
 
-  <mat-card-content>
-    @if (movieDetail().runtime) {
-      <p class="runtime">
-        ⏱ {{ movieDetail().runtime }} min
-      </p>
-    }
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Show all details</mat-panel-title>
+      </mat-expansion-panel-header>
 
-    <h3>Sinopsis</h3>
-    <p>{{ movieDetail().overview }}</p>
+      <div class="details">
+        <p><strong>Idioma:</strong> {{ movieDetail().original_language }}</p>
+        <p><strong>Popularidad:</strong> {{ movieDetail().popularity }}</p>
+        <p><strong>Duración:</strong> {{ movieDetail().runtime }} min</p>
+      </div>
+    </mat-expansion-panel>
 
-    <div class="movie-extra">
-      <p><strong>Idioma original:</strong> {{ movieDetail().original_language }}</p>
-      <p><strong>Popularidad:</strong> {{ movieDetail().popularity }}</p>
-    </div>
-  </mat-card-content>
-
-</mat-card>
+  </mat-card>
+</div>
