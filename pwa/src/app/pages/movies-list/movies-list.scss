@@ -4,3 +4,12 @@
   align-items: center;
   width: 100%;
 }
+
+.spinner-container {
+  min-height: 200px; 
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}

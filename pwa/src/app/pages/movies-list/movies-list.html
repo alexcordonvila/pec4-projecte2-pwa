@@ -15,11 +15,16 @@
         </mat-button-toggle>
       </mat-button-toggle-group>
     </mat-card-header>
-    @if (viewMode=='list') {
-      <app-movie-list-row [movies]="movies()" class="animate__animated animate__fadeIn" />
-    }
-    @else if (viewMode=='grid') {
-      <app-grid [movies]="movies()" class="animate__animated animate__fadeIn"/>
-    }
+    @if (loading) {
+  <div class="spinner-container">
+    <mat-progress-spinner mode="indeterminate" diameter="48"></mat-progress-spinner>
+  </div>
+} @else {
+  @if (viewMode == 'list') {
+    <app-movie-list-row [movies]="movies()" />
+  } @else {
+    <app-grid [movies]="movies()" />
+  }
+}
   </mat-card>
 </div>
